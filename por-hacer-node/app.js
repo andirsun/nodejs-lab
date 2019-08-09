@@ -10,7 +10,7 @@ switch (comando) {
     case 'listar':
         console.log('listar las tareas por hacer');
         break;
-    case 'atualizar':
+    case 'actualizar':
         console.log('actualiza una tarea por hacer');
         break;
     default:
