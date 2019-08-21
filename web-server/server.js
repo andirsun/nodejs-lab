@@ -4,6 +4,9 @@ const port = 3000;
 
 app.use(express.static(__dirname + '/public')); //asi me lee los archivos de la carpeta ppublc y cualquier persona podria acceder a http://localhost/3000/home.html
 
+//Express HBs
+app.set('view engine', 'hbs');
+//////////////////////
 /*pp.get('/', (req, res) => { //de este modo solamente escucha las peticiones que son asi http://localhost/3000/
     //res.send('Hello World!'); //despues de que pase por el / despues de la url 
     let salida = {
