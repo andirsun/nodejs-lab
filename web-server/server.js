@@ -1,17 +1,14 @@
 const express = require('express'); //importo exprss de node modules
 const app = express(); //para poder usar expres
 const hbs = require('hbs');//esto es la libreria de handlebars para reutilizar componentes
-
+require('./hbs/helpers')
 app.use(express.static(__dirname + '/public')); //asi me lee los archivos de la carpeta ppublc y cualquier persona podria acceder a http://localhost/3000/home.html
 
 //Express HBs
 hbs.registerPartials(__dirname + '/views/parciales');//el dirname es para que coja toda la ruta del url no importa que tan larga sea y le concatene ese ruta
 app.set('view engine', 'hbs');//handlebars una opcion por si no se quiere usar ninguno framework de frontends
 
-/////////////
-hbs.registerHelper('getAnio',() =>{
-    return new Date().getFullYear();
-});
+
 //////////////////////
 app.get('/', (req, res) => { //de este modo solamente escucha las peticiones que son asi http://localhost/3000/
     
