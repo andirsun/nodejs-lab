@@ -1,7 +1,9 @@
 const express = require('express'); //importo exprss de node modules
 const app = express(); //para poder usar expres
 const hbs = require('hbs');//esto es la libreria de handlebars para reutilizar componentes
-require('./hbs/helpers')
+
+require('./hbs/helpers');
+const port=process.env.PORT || 3000; //cuando esta en heroku toma el puerto que me asigna pero si esta local me toma el 3000
 app.use(express.static(__dirname + '/public')); //asi me lee los archivos de la carpeta ppublc y cualquier persona podria acceder a http://localhost/3000/home.html
 
 //Express HBs
@@ -32,6 +34,6 @@ app.get('/data', (req, res) => { //de este modo solamente escucha las peticiones
 
 });
 
-app.listen(3000, () => {
-    console.log("escuchando peticiones en el puerto", 3000);
+app.listen(port, () => {
+    console.log("escuchando peticiones en el puerto"+port);
 });
